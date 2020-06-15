@@ -7,8 +7,8 @@ exports.run = (client, message, args, tools) => {
   let platform;
   let username;
  
-  if (!['pc', 'xbl', 'psn'].includes(args[0])) message.channel.send('**Please include the plataform: `!fortnite [pc | xbl | psn ] <username>`**');
-  if (!args[1]) message.channel.send('**Please include the username: `!fortnite [pc | xbl | psn] <username>`**');
+  if (!['pc', 'xbl', 'psn'].includes(args[0])) return message.channel.send('**Please include the plataform: `!fortnite [pc | xbl | psn ] <username>`**');
+  if (!args[1]) return message.channel.send('**Please include the username: `!fortnite [pc | xbl | psn] <username>`**');
   platform = args.shift();
   username = args.join(' ');
   
@@ -16,6 +16,8 @@ exports.run = (client, message, args, tools) => {
     
     const embed = new Discord.MessageEmbed()
       .setColor(0xffffff)
+      .setTitle(`Stats for ${data.username}`)
+      .addField('Top Placement', `**Top 3`)
     
   })
   .catch(error => {
