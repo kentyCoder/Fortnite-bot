@@ -17,7 +17,9 @@ exports.run = (client, message, args, tools) => {
     const embed = new Discord.MessageEmbed()
       .setColor(0xffffff)
       .setTitle(`Stats for ${data.username}`)
-      .addField('Top Placement', `**Top 3:** *${data.lifetimeStats[0].value}*\n**Top 5:** *${data.lifetimeStats[1].value}*\n**Top 6:** *${data.lifetimeStats[3].value}*\n**Top 12:** *${data.lifetimeStats[3]`)
+      .addField('Top Placement', `**Top 3:** *${data.lifetimeStats[0].value}*\n**Top 5:** *${data.lifetimeStats[1].value}*\n**Top 6:** *${data.lifetimeStats[3].value}*\n**Top 12:** *${data.lifetimeStats[4].value}*\n**Top 25:** *${data.lifetimeStats[5].value}*`)
+    .addField('Total score', data.lifetimeStats[6].value)
+    .addField('Matches Played', data.lifetimeStats)
     
   })
   .catch(error => {
